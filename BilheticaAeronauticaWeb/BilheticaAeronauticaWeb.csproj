@@ -1,0 +1,203 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
+    <Content Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
+    <None Remove="%2a%2a\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a/%2a.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="%2a%2a\%2a.config" />
+    <Content Remove="%2a%2a\%2a.cshtml" />
+    <Content Remove="%2a%2a\%2a.json" />
+    <Content Remove="%2a%2a\%2a.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="%2a%2a/%2a.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="%2a%2a/%2a" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AirCraftsController.cs" />
+    <Compile Include="Controllers\AirportsController.cs" />
+    <Compile Include="Controllers\Api\BaseApiController.cs" />
+    <Compile Include="Controllers\Error\ErrorsController.cs" />
+    <Compile Include="Controllers\FallbackController.cs" />
+    <Compile Include="Controllers\FlightCompaniesController.cs" />
+    <Compile Include="Controllers\FlightsController.cs" />
+    <Compile Include="Controllers\ICAOTDesignatorsController.cs" />
+    <Compile Include="Controllers\StripeController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\Entities\Aircraft.cs" />
+    <Compile Include="Data\Entities\Cabin.cs" />
+    <Compile Include="Data\Entities\CityAirport.cs" />
+    <Compile Include="Data\Entities\Country.cs" />
+    <Compile Include="Data\Entities\Flight.cs" />
+    <Compile Include="Data\Entities\FlightCabinAndSeatsMap.cs" />
+    <Compile Include="Data\Entities\FlightCabinMap.cs" />
+    <Compile Include="Data\Entities\FlightCompany.cs" />
+    <Compile Include="Data\Entities\FlightSeatMap.cs" />
+    <Compile Include="Data\Entities\FlightTicket.cs" />
+    <Compile Include="Data\Entities\FlightTicketPriceMetaData.cs" />
+    <Compile Include="Data\Entities\ICAOTypeDesignator.cs" />
+    <Compile Include="Data\Entities\IEntity.cs" />
+    <Compile Include="Data\Entities\Region.cs" />
+    <Compile Include="Data\Entities\Seat.cs" />
+    <Compile Include="Data\Entities\User.cs" />
+    <Compile Include="Data\Mocks\CityAirportMock.cs" />
+    <Compile Include="Data\Mocks\CountryMock.cs" />
+    <Compile Include="Data\Mocks\FlightCompanyMock.cs" />
+    <Compile Include="Data\Mocks\ICAOTypeDesignatorsMock.cs" />
+    <Compile Include="Data\Mocks\IMock.cs" />
+    <Compile Include="Data\Mocks\RegionMock.cs" />
+    <Compile Include="Data\Repository\AircraftRepository.cs" />
+    <Compile Include="Data\Repository\CabinRepository.cs" />
+    <Compile Include="Data\Repository\CityAirportRepository.cs" />
+    <Compile Include="Data\Repository\FlightCabinAndSeatsMapRepository.cs" />
+    <Compile Include="Data\Repository\FlightCabinMapRepository.cs" />
+    <Compile Include="Data\Repository\FlightCompanyRepository.cs" />
+    <Compile Include="Data\Repository\FlightRepository.cs" />
+    <Compile Include="Data\Repository\FlightSeatMapRepository.cs" />
+    <Compile Include="Data\Repository\FlightTicketMetadataRepository.cs" />
+    <Compile Include="Data\Repository\FlightTicketRepository.cs" />
+    <Compile Include="Data\Repository\GenericRepository.cs" />
+    <Compile Include="Data\Repository\ICAOTDesignatorsRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IAircraftRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\ICabinRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\ICityAirportRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightCabinAndSeatsMapRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightCabinMapRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightCompanyRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightSeatMapRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightTicketMetadataRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IFlightTicketRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IGenericRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\IICAOTDesignatorsRepository.cs" />
+    <Compile Include="Data\Repository\interfaces\ISeatRepository.cs" />
+    <Compile Include="Data\Repository\SeatRepository.cs" />
+    <Compile Include="Data\SeedDb.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
+    <Compile Include="Extensions\AiportExtensions.cs" />
+    <Compile Include="Extensions\FlightExtensions.cs" />
+    <Compile Include="Extensions\HttpExtensions.cs" />
+    <Compile Include="Helper\ConverterHelper.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
+    <Compile Include="Helper\Interfaces\IConverterHelper.cs" />
+    <Compile Include="Helper\Interfaces\IImageHelper.cs" />
+    <Compile Include="Helper\Interfaces\IMailHelper.cs" />
+    <Compile Include="Helper\Interfaces\IStripeHelper.cs" />
+    <Compile Include="Helper\Interfaces\ITokenHelper.cs" />
+    <Compile Include="Helper\Interfaces\IUserHelper.cs" />
+    <Compile Include="Helper\MailHelper.cs" />
+    <Compile Include="Helper\Response.cs" />
+    <Compile Include="Helper\ResponseHelper.cs" />
+    <Compile Include="Helper\StripeHelper.cs" />
+    <Compile Include="Helper\TokenHelper.cs" />
+    <Compile Include="Helper\UserHelper.cs" />
+    <Compile Include="Middleware\ExceptionMiddleware.cs" />
+    <Compile Include="Migrations\20221121181942_initDb.cs" />
+    <Compile Include="Migrations\20221121181942_initDb.Designer.cs" />
+    <Compile Include="Migrations\20221122153328_imageID.cs" />
+    <Compile Include="Migrations\20221122153328_imageID.Designer.cs" />
+    <Compile Include="Migrations\20221122155212_imageID2.cs" />
+    <Compile Include="Migrations\20221122155212_imageID2.Designer.cs" />
+    <Compile Include="Migrations\DataContextModelSnapshot.cs" />
+    <Compile Include="Models\AircraftModel.cs" />
+    <Compile Include="Models\AircraftQuantityRequest.cs" />
+    <Compile Include="Models\CabinCreateUpdateModel.cs" />
+    <Compile Include="Models\CabinDeleteUpdateModel.cs" />
+    <Compile Include="Models\CabinTypeModel.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\ChangeUserModel.cs" />
+    <Compile Include="Models\CreateTeamMemberModel.cs" />
+    <Compile Include="Models\FlightCompanyModel.cs" />
+    <Compile Include="Models\FlightCreateModel.cs" />
+    <Compile Include="Models\FlightsBySearchModel.cs" />
+    <Compile Include="Models\FlightTicketModel.cs" />
+    <Compile Include="Models\ICAODesignatorModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RecoverPasswordModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\ResetPasswordViewModel.cs" />
+    <Compile Include="Models\StripePaymentModel.cs" />
+    <Compile Include="Models\TicketListModel.cs" />
+    <Compile Include="Models\TicketMetadataModel.cs" />
+    <Compile Include="Models\UpdateColumnsModel.cs" />
+    <Compile Include="obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="RequestHelpers\AircraftParams.cs" />
+    <Compile Include="RequestHelpers\AirportParams.cs" />
+    <Compile Include="RequestHelpers\FlightAirportParams.cs" />
+    <Compile Include="RequestHelpers\FlightCompanyParams.cs" />
+    <Compile Include="RequestHelpers\FlightsParams.cs" />
+    <Compile Include="RequestHelpers\ICAOParams.cs" />
+    <Compile Include="RequestHelpers\MetaData.cs" />
+    <Compile Include="RequestHelpers\PagedList.cs" />
+    <Compile Include="RequestHelpers\PaginationParams.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json" />
+    <Content Include="appsettings.json" />
+    <Content Include="obj\BilheticaAeronauticaWeb.csproj.nuget.dgspec.json" />
+    <Content Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="package.json" />
+    <Content Include="Pages\Email\ConfirmEmailSuccess.cshtml" />
+    <Content Include="Pages\ResetPassword.cshtml" />
+    <Content Include="Pages\ResetPasswordSuccess.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="3.4.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Stripe.net" Version="41.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\BilheticaAeronauticaWeb.csproj.nuget.g.props" />
+    <None Include="obj\BilheticaAeronauticaWeb.csproj.nuget.g.targets" />
+    <None Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.assets.cache" />
+    <None Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net5.0\BilheticaAeronauticaWeb.RazorComponent.input.cache" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="yarn.lock" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net5.0\" />
+  </ItemGroup>
+
+</Project>

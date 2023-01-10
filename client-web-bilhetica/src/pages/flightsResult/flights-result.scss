@@ -1,0 +1,330 @@
+.min-height-1 {
+    min-height: 20rem;
+}
+
+/* Customize the label (the container) */
+.container-companyNames {
+    display: flex;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-companyNames input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark-companyNames {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid rgba(0, 209, 178, 1);
+    border-radius: 5px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-companyNames:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container-companyNames input:checked ~ .checkmark-companyNames:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-companyNames .checkmark-companyNames:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid rgba(0, 209, 178, 1);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Customize the label (the container) */
+.container-prices {
+    display: flex;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-prices input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark-prices {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid rgba(0, 209, 178, 1);
+    border-radius: 5px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-prices:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container-prices input:checked ~ .checkmark-prices:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-prices .checkmark-prices:after {
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 209, 178, 1);
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right-f {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@-webkit-keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+.quickview {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    max-width: calc(100% - 50px);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 35;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: 0.3s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    will-change: transform;
+}
+.quickview.is-marginless {
+    max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .quickview {
+        width: 100%;
+        right: -100%;
+    }
+}
+@media screen and (min-width: 769px), print {
+    .quickview {
+        width: 50%;
+        right: -50%;
+    }
+}
+@media screen and (min-width: 1088px) {
+    .quickview {
+        width: 35%;
+        right: -35%;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .quickview {
+        width: 30%;
+        right: -30%;
+    }
+}
+@media screen and (min-width: 1472px) {
+    .quickview {
+        width: 25%;
+        right: -25%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .quickview.is-left {
+        left: -100%;
+    }
+}
+@media screen and (min-width: 769px), print {
+    .quickview.is-left {
+        left: -50%;
+    }
+}
+@media screen and (min-width: 1088px) {
+    .quickview.is-left {
+        left: -35%;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .quickview.is-left {
+        left: -30%;
+    }
+}
+@media screen and (min-width: 1472px) {
+    .quickview.is-left {
+        left: -25%;
+    }
+}
+.quickview.is-active {
+    right: 0;
+    box-shadow: 5px 0 13px 3px rgba(0, 0, 0, 0.1);
+}
+.quickview.is-active.is-left {
+    left: 0;
+}
+.quickview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    min-height: 3.25em !important;
+    border-bottom: 1px solid #dbdbdb;
+}
+.quickview-header.is-white {
+    background-color: #fff;
+}
+.quickview-header.is-white .title {
+    color: #0a0a0a;
+}
+.quickview-header.is-black {
+    background-color: #0a0a0a;
+}
+.quickview-header.is-black .title {
+    color: #fff;
+}
+.quickview-header.is-light {
+    background-color: #f5f5f5;
+}
+.quickview-header.is-light .title {
+    color: #363636;
+}
+.quickview-header.is-dark {
+    background-color: #363636;
+}
+.quickview-header.is-dark .title {
+    color: #f5f5f5;
+}
+.quickview-header.is-primary {
+    background-color: #00d1b2;
+}
+.quickview-header.is-primary .title {
+    color: #fff;
+}
+.quickview-header.is-link {
+    background-color: #3273dc;
+}
+.quickview-header.is-link .title {
+    color: #fff;
+}
+.quickview-header.is-info {
+    background-color: #209cee;
+}
+.quickview-header.is-info .title {
+    color: #fff;
+}
+.quickview-header.is-success {
+    background-color: #23d160;
+}
+.quickview-header.is-success .title {
+    color: #fff;
+}
+.quickview-header.is-warning {
+    background-color: #ffdd57;
+}
+.quickview-header.is-warning .title {
+    color: rgba(0, 0, 0, 0.7);
+}
+.quickview-header.is-danger {
+    background-color: #ff3860;
+}
+.quickview-header.is-danger .title {
+    color: #fff;
+}
+.quickview-header .title {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.quickview-header .title img {
+    max-height: 2em;
+}
+.quickview-body {
+    flex: 1 1 0%;
+    overflow-y: auto;
+}
+.quickview-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    min-height: 4rem;
+    background-color: #f5f5f5;
+    border-top: 1px solid #dbdbdb;
+}
+.quickview-footer > * {
+    margin: 0 0.4rem;
+}

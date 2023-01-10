@@ -1,0 +1,17 @@
+@media (max-width: 1024px) {
+    .side-menu-hide {
+        display: none;
+    }
+
+    .side-menu-hide.is-mobile-side {
+        display: block;
+        position: absolute;
+        z-index: 5;
+    }
+}
+
+@media (min-width: 1025px) {
+    .side-menu-hide {
+        display: block;
+    }
+}

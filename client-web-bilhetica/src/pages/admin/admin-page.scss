@@ -1,0 +1,9 @@
+.wrapper-side {
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    .wrapper-side {
+        display: block;
+    }
+}

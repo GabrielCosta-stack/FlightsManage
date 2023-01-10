@@ -1,0 +1,51 @@
+.seatMapLayout {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cabinSeat {
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: white;
+    background: #3b76f6;
+    cursor: pointer;
+}
+
+.cabinSeat:hover {
+    background: #75a0ff;
+}
+
+.taken {
+    background: #df0000;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.selected {
+    background: #87ff96;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cabin-seat-taken {
+    background-color: red;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+#legend {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 50px auto;
+}
+
+#legend .txt {
+    display: flex;
+    align-items: center;
+}
